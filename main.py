@@ -102,11 +102,11 @@ def Request_to_FTX(request):
 
 
 Start()
-# schedule.every(1).hours.do(Start)
-#
-# while True:
-#     schedule.run_pending()
-#     time.sleep(1)
+schedule.every(1).hours.do(Start)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
 
 
 

@@ -21,6 +21,7 @@ Post_lend = "https://ftx.com/api/spot_margin/offers"  # Post_lend
 ftx_client = FtxClient(
     api_key = API_KEY,
     api_secret = API_SECRET
+    subaccount_name = Sub_account_name
 )
 
 if not You_want_to_reserve_howmuch:                                                     ## 保留金額 = [] 都沒輸入，幫你都填上0

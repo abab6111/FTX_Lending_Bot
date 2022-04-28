@@ -8,8 +8,8 @@ from datetime import datetime
 from requests import Request, Session
 from client import FtxClient
 
-API_KEY = "RoNMJDIoW8jj0xpOfi8C0EDpXonxlriUCdG5ypdg"
-API_SECRET = "nYNNSEY0S3sCJ9vuSK_vNfxT7bhBqYxLPyIw1gEx"
+API_KEY = ""
+API_SECRET = ""
 Sub_account_name = ''
 You_want_to_lend = ["RAY"]
 You_want_to_reserve_howmuch = [500]
@@ -20,8 +20,11 @@ Post_lend = "https://ftx.com/api/spot_margin/offers"  # Post_lend
 
 ftx_client = FtxClient(
     api_key = API_KEY,
-    api_secret = API_SECRET
+    api_secret = API_SECRET,
+    subaccount_name = Sub_account_name
 )
+
+
 
 if not You_want_to_reserve_howmuch:                                                     ## 保留金額 = [] 都沒輸入，幫你都填上0
     You_want_to_reserve_howmuch = np.zeros(shape=len(You_want_to_lend), dtype=int)
@@ -32,7 +35,6 @@ elif "" in You_want_to_reserve_howmuch:                                         
     You_want_to_reserve_howmuch = np.array(You_want_to_reserve_howmuch)
     You_want_to_reserve_howmuch[You_want_to_reserve_howmuch=='']=0
     You_want_to_reserve_howmuch = You_want_to_reserve_howmuch.astype(np.float64)
-
 
 
 
